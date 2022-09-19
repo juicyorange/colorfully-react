@@ -27,17 +27,20 @@
 
 
 
-- `/frontend/test` 에 자신의 페이지를 routing 하는 router를 testRouter.js로 이름을 변경하여 넣고 나머지도 넣어준다.
-  - 이때 router만 아래와 같이 작업하여 주면되고, 나머지 구조는 상관없다.<br/>
-<p align="center">
-<img width="254" alt="2" src="https://user-images.githubusercontent.com/32060716/168130339-88d7e7df-f6b8-46a4-8e75-2b2b013d20a7.png">
+- `/frontend/test` 아래에 파일들을 넣고 router를 testRouter.js로 이름을 변경하여넣어준다.
+  - 폴더 구조
+  - <p align="center"><img width="254" alt="2" src="https://user-images.githubusercontent.com/32060716/168130339-88d7e7df-f6b8-46a4-8e75-2b2b013d20a7.png">
 </p>
+
+  - 이때 router 파일은 아래와 같이 최상단에 routes 로만 감싸져있다면 된다.<br/>
+  - <p align="center"><img width="744" alt="3" src="https://user-images.githubusercontent.com/30497935/190959115-3e8e0cd6-54de-41da-97ff-3d372e78424f.png">
+</p>
+
+
+
 
 - 코드 변경사항
   - 공통(설문조사 페이지 추가 및 랜덤 스타일을 위한 코드 추가)
-    - `/testRouter.js` 에 아래 사진의 주석과 같이 `<Route>` 컴포넌트를 추가해준다. 
-    - <p align="center"><img width="830" alt="3" src="https://user-images.githubusercontent.com/32060716/168130344-5ea9b8bb-d5dc-45de-8cf1-0caaa0d57947.png"></p>
-
     - 컴포넌트들에 아래와 같이 주석에 명시된 모듈및 코드를 추가하고, 컴포넌트에 그룹을 지정해준다.
       - 그룹은 총 4가지로 mainBackGroup, mainGroup, subGroup, pointGroup이 존재한다.
       - <p align="center"><img width="1094" alt="4" src="https://user-images.githubusercontent.com/32060716/168130356-d3b90deb-2969-4b29-84b5-758d7c6c1091.png"></p>
@@ -46,11 +49,13 @@
      - Group을 1개만 지정하는 경우 
        - 아래와 주석으로 표시한 것과 같이 testRouter를 작성하여 주면 된다.
        - 색상은 recoil로 관리되기 때문에 한번 불러오면 전체에 적용하는 것이 가능하다.
-       - <p align="center"><img width="1337" alt="5" src="https://user-images.githubusercontent.com/32060716/168130364-33dc1cca-94eb-4d1d-b2db-792dc811e4d9.png"></p>
+       - <p align="center"><img width="997" alt="5" src="https://user-images.githubusercontent.com/30497935/190959527-56888991-5800-4752-9a29-7c2b37103c6e.png"></p>
+
 
      - Group을 여러개 지정하는 경우
        - 아래와 같이 컴포넌트마다 랜덤으로 색상을 받아오는 함수를 호출한다.
-         - 이때 로직이 반드시 한방향으로만 진행한다면(뒤로가기 같은 것 없는 경우) 그룹이 변경되는 페이지 부분에만 색상을 받아오는 함수를 호출해주면 된다.
+       - <p align="center"><img width="668" alt="6" src="https://user-images.githubusercontent.com/30497935/190960286-24b70419-f1e9-4d1f-b974-780bce41386f.png"></p>
+        - 이때 로직이 반드시 한방향으로만 진행한다면(뒤로가기 같은 것 없는 경우) 그룹이 변경되는 페이지 부분에만 색상을 받아오는 함수를 호출해주면 된다.
 
 -  아래 명령어로 서버를 띄운다.
   ```terminal
